@@ -1,12 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import SQLTextEditor from "@/components/sqlTextEditor";
-import RecentQueries from "@/components/recentQueries";
+import MenuItems from "@/components/MenuItems";
+import QueriesList from "@/components/recentQueries";
 // import SQLTextEditor from "@/components/sqlTextEditor";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -65,11 +64,9 @@ export default function Home() {
       </Head>
       <div className="flex dashboard">
         <div className="sidePanel">
-          <div className="menuOptions">
-            <h2>Recent Queries</h2>
-          </div>
+          <MenuItems />
           <div className="recentQueryList custom-scrollbar">
-            <RecentQueries />
+            <QueriesList />
           </div>
         </div>
         <div className="dataArea" id="dataArea">

@@ -51,6 +51,10 @@
 }
 
 .menuOptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
 }
 
@@ -71,7 +75,7 @@
   background-color: white;
 }
 
-.timeDisplay{
+.timeDisplay {
   color: rgb(153, 153, 153);
   font-size: 1rem;
   font-weight: 500;
