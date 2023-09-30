@@ -4,13 +4,11 @@ import QueryStatsRoundedIcon from "@mui/icons-material/QueryStatsRounded";
 import { useEffect, useState } from "react";
 
 export default function RecentQueries(): JSX.Element {
-  const { queryHistory, updateQueryData } = useStore(
-    (state) => state
-  );
+  const { queryHistory, updateQueryData } = useStore((state) => state);
   return (
     <div className="recentQueries">
       <div className="recentQueriesList">
-        {queryHistory.reverse().map((query, index) => {
+        {queryHistory.map((query, index) => {
           return (
             <div
               className="recentQuery custom-scrollbar-recentQuery"
@@ -20,7 +18,7 @@ export default function RecentQueries(): JSX.Element {
               }}
             >
               <div className="timeDisplay">{formatTime(query.timestamp)}</div>
-              <p>{query.queryValue}</p>
+              <p className="custom-scrollbar-recentQuery">{query.queryValue}</p>
             </div>
           );
         })}
