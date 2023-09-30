@@ -10,3 +10,8 @@ export const themes = [
     "solarized_light",
     "terminal"
   ];
+
+  export enum sidePanel{
+    recentQuery = "Recent Queries",
+    favoriteQuery = "Starred Queries",
+  }
