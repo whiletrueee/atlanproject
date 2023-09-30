@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.dashboard {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: top;
+  background-color: white;
+  padding: 17px;
+}
+
+.sidePanel {
+  width: 20%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(10deg, #f7efff 0%, #f0f7ff 100%);
+}
+
+.dataArea {
+  border-radius: 6px;
+  width: 79%;
+  height: 100%;
+  background: #f8f9fd;
+}
+
+.textEditorBox {
+  max-height: 23%;
+  border-radius: 10px;
+  border: 4px solid #07080c;
+  background: #eef1fa;
+  overflow-y: scroll;
+}
+
+.aceEditor{
+    height: 100%;
+    width: 100%;
+}
