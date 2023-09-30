@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  font-family: 'Gabarito', cursive;
+  font-family: "Gabarito", cursive;
 }
 
 .dashboard {
@@ -28,7 +28,7 @@
   justify-content: space-between;
 }
 
-.textEditArea{
+.textEditArea {
   max-height: 30%;
   border-radius: 10px;
 }
@@ -37,7 +37,7 @@
   height: 80%;
   overflow-y: scroll;
 }
-.textEditorMenu{
+.textEditorMenu {
   padding: 10px 0;
   display: flex;
   flex-direction: row;
@@ -45,13 +45,24 @@
   align-items: center;
 }
 
-.aceEditor{
-    height: 95%;
-    width: 100%;
-    background-color: 'transparent';
+.aceEditor {
+  height: 95%;
+  width: 100%;
+  background-color: "transparent";
 }
 
+.ace_editor,
+.ace_editor div {
+  font-family: monospace;
+}
 
-.ace_editor, .ace_editor div{
-  font-family:monospace
+.auth-dataArea {
+  border-radius: 6px;
+  width: 48%;
+  height: 100%;
+  background: #f8f9fd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
