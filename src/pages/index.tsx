@@ -6,6 +6,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import SQLTextEditor from "@/components/sqlTextEditor";
+// import SQLTextEditor from "@/components/sqlTextEditor";
 
 const inter = Inter({ subsets: ["latin"] });
 const columns: GridColDef[] = [
@@ -64,7 +65,7 @@ export default function Home() {
       <div className="flex dashboard">
         <div className="sidePanel"></div>
         <div className="dataArea" id="dataArea">
-          <SQLTextEditor />
+        <SQLTextEditor />
           <Box sx={{ height: 400, width: "100%" }}>
             <DataGrid
               rows={rows}
@@ -81,6 +82,7 @@ export default function Home() {
               disableRowSelectionOnClick
             />
           </Box>
+         
         </div>
       </div>
     </>
