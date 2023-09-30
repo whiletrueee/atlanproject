@@ -6,6 +6,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import SQLTextEditor from "@/components/sqlTextEditor";
+import RecentQueries from "@/components/recentQueries";
 // import SQLTextEditor from "@/components/sqlTextEditor";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -63,9 +64,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex dashboard">
-        <div className="sidePanel"></div>
+        <div className="sidePanel">
+          <div className="menuOptions">
+            <h2>Recent Queries</h2>
+          </div>
+          <div className="recentQueryList custom-scrollbar">
+            <RecentQueries />
+          </div>
+        </div>
         <div className="dataArea" id="dataArea">
-        <SQLTextEditor />
+          <SQLTextEditor />
           <Box sx={{ height: 400, width: "100%" }}>
             <DataGrid
               rows={rows}
@@ -82,7 +90,6 @@ export default function Home() {
               disableRowSelectionOnClick
             />
           </Box>
-         
         </div>
       </div>
     </>

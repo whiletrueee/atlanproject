@@ -3,8 +3,24 @@ import { State } from "@/utils/state.types";
 import { create } from "zustand";
 
 export const useStore = create<State & Action>()((set) => ({
-  firstName: "",
-  lastName: "",
-  updateFirstName: (firstName) => set(() => ({ firstName: firstName })),
-  updateLastName: (lastName) => set(() => ({ lastName: lastName })),
+  queryData: undefined,
+  queryHistory: [],
+  updateQueryData: (queryData) => set(() => ({ queryData: queryData })),
+  updateQueryHistory: (queryValue) =>
+    set((state) => {
+      if (queryValue) {
+        return {
+          ...state,
+          queryHistory: [
+            ...state.queryHistory,
+            {
+              timestamp: new Date().toISOString(),
+              queryValue,
+              isFavourite: false,
+            },
+          ],
+        };
+      }
+      return state;
+    }),
 }));

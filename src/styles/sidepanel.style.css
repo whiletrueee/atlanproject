@@ -1,0 +1,67 @@
+.recentQueries {
+  padding: 20px 20px;
+}
+
+.sidePanel {
+  width: 20%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(10deg, #f7efff 0%, #f0f7ff 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.recentQueriesTitle h2 {
+  color: rgb(0, 0, 0);
+}
+
+.recentQueriesTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.recentQueriesList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recentQuery {
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 3px solid white;
+  min-height: 5rem;
+  max-height: 7rem;
+  overflow-y: scroll;
+}
+
+.recentQuery:hover {
+  cursor: pointer;
+  border: 3px solid black;
+  transition: all 0.2s ease-in-out;
+}
+
+.recentQueryList {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.menuOptions {
+  padding: 20px;
+}
+
+.recentQuery p {
+  color: rgb(0, 0, 0);
+}
+
+.timeDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  color: rgb(153, 153, 153);
+  font-size: 1rem;
+  font-weight: 500;
+}

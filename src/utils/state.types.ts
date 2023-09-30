@@ -1,6 +1,10 @@
 export interface State {
-  firstName: string;
-  lastName: string;
+  queryData: string | undefined,
+  queryHistory: {
+    timestamp: string,
+    queryValue: string,
+    isFavourite: boolean
+  }[],
 }
 
 export interface authSliceState {

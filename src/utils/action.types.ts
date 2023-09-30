@@ -1,8 +1,8 @@
 import { State, authSliceState } from "@/utils/state.types";
 
 export interface Action {
-  updateFirstName: (firstName: State["firstName"]) => void;
-  updateLastName: (lastName: State["lastName"]) => void;
+  updateQueryData: (queryData: State["queryData"]) => void;
+  updateQueryHistory: (queryValue: string | undefined) => void;
 }
 
 export interface authSliceAction {

@@ -5,14 +5,20 @@ import "ace-builds/src-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-terminal";
 import "ace-builds/src-noconflict/ext-language_tools";
 import { themes } from "@/utils/constants";
+import { useStore } from "@/zustand/store";
 
 // themes.forEach(theme => require(`ace-builds/src-noconflict/theme-${theme}`));
 
 export default function SQLTextEditor(): JSX.Element {
-  const [sqlValue, setSqlValue] = React.useState("");
+  const { queryData, updateQueryData, updateQueryHistory } = useStore(
+    (state) => state
+  );
+
   function onChange(newValue: any) {
-    setSqlValue(newValue);
+
+    updateQueryData(newValue);
   }
+
   return (
     <div className="textEditArea">
       <div className="textEditorBox custom-scrollbar">
@@ -20,6 +26,7 @@ export default function SQLTextEditor(): JSX.Element {
           style={{
             backgroundColor: "transparent",
           }}
+          value={queryData}
           wrapEnabled={true}
           className="aceEditor"
           placeholder="Enter SQL Query Here..."
@@ -30,8 +37,8 @@ export default function SQLTextEditor(): JSX.Element {
           onChange={onChange}
           fontSize={18}
           showGutter={true}
+          // debounceChangePeriod={1000}
           highlightActiveLine={true}
-          editorProps={{ $blockScrolling: true }}
           setOptions={{
             enableBasicAutocompletion: true,
             enableLiveAutocompletion: true,
@@ -43,6 +50,10 @@ export default function SQLTextEditor(): JSX.Element {
       </div>
       <div className="textEditorMenu">
         <Button
+          onClick={() => {
+            console.log(queryData);
+            updateQueryHistory(queryData);
+          }}
           variant="contained"
           size="medium"
           sx={{
