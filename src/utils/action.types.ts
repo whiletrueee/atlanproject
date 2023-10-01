@@ -8,7 +8,7 @@ export interface Action {
   updateSidePanel: (activeMenu: sidePanel) => void;
 }
 
-// export interface authSliceAction {
-//   updateEmail: (email: authSliceState["email"]) => void;
-//   updatePassword: (password: authSliceState["password"]) => void;
-// }
+export interface authSliceAction {
+  updateEmail: (email: authSliceState["email"]) => void;
+  updatePassword: (password: authSliceState["password"]) => void;
+}
