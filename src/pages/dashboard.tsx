@@ -4,7 +4,7 @@ import TableArea from "@/components/TableArea";
 
 export default function Dashboard() {
   return (
-    <div className="flex dashboard">
+    <div className="dashboard">
       <SidePanel />
       <TableArea />
     </div>
