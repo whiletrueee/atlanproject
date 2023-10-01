@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import * as React from "react";
-import SidePanel from "@/components/SidePanel";
-import TableArea from "@/components/TableArea";
 import AuthSidePanel from "@/components/auth/Auth.SidePanel";
 import AuthLogin from "@/components/auth/Auth.Login";
 
