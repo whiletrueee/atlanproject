@@ -1,10 +1,10 @@
 import * as React from "react";
-import SidePanel from "@/components/sidePanel";
-import TableArea from "@/components/tableArea";
+import SidePanel from "@/components/SidePanel";
+import TableArea from "@/components/TableArea";
 
 export default function Dashboard() {
   return (
-    <div className="flex dashboard">
+    <div className="dashboard">
       <SidePanel />
       <TableArea />
     </div>

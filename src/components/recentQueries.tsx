@@ -34,7 +34,10 @@ export default function QueriesList(): JSX.Element {
                 className="recentQuery custom-scrollbar-recentQuery"
                 key={index}
                 onClick={() => {
-                  updateQueryData(query.queryValue);
+                  updateQueryData({
+                    queryValue: query.queryValue,
+                    index: index,
+                  });
                 }}
               >
                 <div className="recentQueryItemMenu">

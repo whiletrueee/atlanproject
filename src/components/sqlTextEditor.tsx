@@ -4,18 +4,16 @@ import Button from "@mui/material/Button";
 import "ace-builds/src-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-terminal";
 import "ace-builds/src-noconflict/ext-language_tools";
-import { themes } from "@/utils/constants";
 import { useStore } from "@/zustand/store";
 
 // themes.forEach(theme => require(`ace-builds/src-noconflict/theme-${theme}`));
 
 export default function SQLTextEditor(): JSX.Element {
-  const { queryData, updateQueryData, updateQueryHistory } = useStore(
-    (state) => state
-  );
+  const { queryData, updateQueryData, updateQueryHistory, queryHistory } =
+    useStore((state) => state);
 
   function onChange(newValue: any) {
-    updateQueryData(newValue);
+    updateQueryData({ queryValue: newValue, index: queryData.index });
   }
 
   return (
@@ -25,7 +23,7 @@ export default function SQLTextEditor(): JSX.Element {
           style={{
             backgroundColor: "transparent",
           }}
-          value={queryData}
+          value={queryData.queryValue}
           wrapEnabled={true}
           className="aceEditor"
           placeholder="Enter SQL Query Here..."
@@ -50,8 +48,8 @@ export default function SQLTextEditor(): JSX.Element {
       <div className="textEditorMenu">
         <Button
           onClick={() => {
-            console.log(queryData);
-            updateQueryHistory(queryData);
+            updateQueryHistory(queryData.queryValue);
+            console.log(queryHistory);
           }}
           variant="contained"
           size="medium"

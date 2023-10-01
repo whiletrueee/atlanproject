@@ -3,16 +3,18 @@ import { sidePanel } from "@/utils/constants";
 import { State } from "@/utils/state.types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import order from "@/utils/Json/order.json";
+import { getColumnArray } from "@/utils/helperFunction";
 
 export const useStore = create<State & Action>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       sidePanel: {
         activeMenu: sidePanel.recentQuery,
       },
-      queryData: undefined,
+      queryData: { queryValue: undefined, index: undefined },
       queryHistory: [],
-      updateSidePanel: (activeMenu) =>
+      updateSidePanel: (activeMenu: sidePanel) =>
         set(() => ({ sidePanel: { activeMenu } })),
       updateFavorite: (queryIndex) =>
         set((state) => ({
@@ -37,6 +39,8 @@ export const useStore = create<State & Action>()(
                   timestamp: new Date().toISOString(),
                   queryValue,
                   isFavourite: false,
+                  row: order,
+                  column: getColumnArray(order[0]),
                 },
               ],
             };
