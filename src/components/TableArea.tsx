@@ -10,7 +10,7 @@ export default function TableArea() {
   return (
     <div className="dataArea" id="dataArea">
       <SQLTextEditor />
-      <Box sx={{ height: 400, width: "100%" }}>
+      <Box sx={{ height: "auto", width: "100%" }}>
         <DataGrid
           rows={rows}
           columns={columns}

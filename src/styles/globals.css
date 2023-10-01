@@ -60,9 +60,25 @@
   border-radius: 6px;
   width: 48%;
   height: 100%;
-  background: #f8f9fd;
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
 }

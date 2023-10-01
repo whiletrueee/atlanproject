@@ -15,7 +15,6 @@ export default function SQLTextEditor(): JSX.Element {
   );
 
   function onChange(newValue: any) {
-
     updateQueryData(newValue);
   }
 
