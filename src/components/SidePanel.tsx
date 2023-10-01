@@ -8,6 +8,7 @@ export default function SidePanel() {
       <div className="recentQueryList custom-scrollbar">
         <QueriesList />
       </div>
+      <div className=""></div>
     </div>
   );
 }
