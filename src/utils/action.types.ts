@@ -3,9 +3,13 @@ import { State, authSliceState } from "@/utils/state.types";
 
 export interface Action {
   updateQueryData: (queryData: State["queryData"]) => void;
-  updateQueryHistory: (queryValue: string | undefined) => void;
+  updateQueryHistory: (
+    queryValue: string | undefined,
+    tableName: string
+  ) => void;
   updateFavorite: (queryIndex: number) => void;
   updateSidePanel: (activeMenu: sidePanel) => void;
+  updateTableData: (tableData: string) => void;
 }
 
 export interface authSliceAction {

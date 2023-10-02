@@ -5,12 +5,18 @@ import "ace-builds/src-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-terminal";
 import "ace-builds/src-noconflict/ext-language_tools";
 import { useStore } from "@/zustand/store";
+import { dataTitle } from "@/utils/constants";
 
 // themes.forEach(theme => require(`ace-builds/src-noconflict/theme-${theme}`));
 
 export default function SQLTextEditor(): JSX.Element {
-  const { queryData, updateQueryData, updateQueryHistory, queryHistory } =
-    useStore((state) => state);
+  const {
+    queryData,
+    updateQueryData,
+    updateQueryHistory,
+    queryHistory,
+    updateTableData,
+  } = useStore((state) => state);
 
   function onChange(newValue: any) {
     updateQueryData({ queryValue: newValue, index: queryData.index });
@@ -48,8 +54,10 @@ export default function SQLTextEditor(): JSX.Element {
       <div className="textEditorMenu">
         <Button
           onClick={() => {
-            updateQueryHistory(queryData.queryValue);
-            console.log(queryHistory);
+            const tableName =
+              dataTitle[Math.floor(Math.random() * dataTitle.length)];
+            updateQueryHistory(queryData.queryValue, tableName);
+            updateTableData(tableName);
           }}
           variant="contained"
           size="medium"

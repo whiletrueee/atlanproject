@@ -12,6 +12,7 @@ export default function QueriesList(): JSX.Element {
     queryHistory,
     updateQueryData,
     updateFavorite,
+    updateTableData,
     sidePanel: menuOption,
   } = useStore((state) => state);
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function QueriesList(): JSX.Element {
     <div className="recentQueries">
       <div className="recentQueriesList">
         {queryHistory
-          .filter((item) => {
+          .filter((item: { isFavourite: any }) => {
             if (menuOption.activeMenu === sidePanel.favoriteQuery) {
               return item.isFavourite;
             } else {
@@ -38,6 +39,7 @@ export default function QueriesList(): JSX.Element {
                     queryValue: query.queryValue,
                     index: index,
                   });
+                  updateTableData(queryHistory[index].tableName);
                 }}
               >
                 <div className="recentQueryItemMenu">

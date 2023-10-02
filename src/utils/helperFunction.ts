@@ -18,3 +18,10 @@ export function getColumnArray(data: any) {
   }
   return columnArray;
 }
+
+export function getRowId(data: any): string {
+  if (data?.customerID) return "customerID";
+  if (data?.employeeID) return "employeeID";
+  if (data?.orderID) return "orderID";
+  return "id";
+}
