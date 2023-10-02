@@ -1,13 +1,15 @@
 # SQL Query Runner Web Application
 
-🚀 Welcome to the SQL Query Runner, a web application developed using Next.js and TypeScript! This application allows users to run SQL queries, view query history, and interact with the results in a responsive table.
+🚀 Welcome to the SQL Query Runner, a web application developed using Next.js and TypeScript! This application allows users to run SQL queries, view query history, and interact with the results in a table.
 
 ## Deployment & Video Link
 
 - Vercel Deployment Link [https://atlan.singhharshit.me](https://atlan.singhharshit.me).
-> If the above link is broken use [https://atlanproject.vercel.app/](https://atlanproject.vercel.app/).
 
-- Video Demo Link [https://www.loom.com/share/fbdff3edab5c4c9697fca4737760cf5d?sid=a2774873-158a-4cf6-a4f1-7aeffa6c675d](Loom Video Link)
+  > If the above link is broken use [https://atlanproject.vercel.app/](https://atlanproject.vercel.app/).
+
+- Video Demo Link [https://www.loom.com/share/fbdff3edab5c4c9697fca4737760cf5dsid=a2774873-158a-4cf6-a4f1-7aeffa6c675d](Loom Video Link)
+
 ## Features
 
 - **Query Execution:** Input your SQL queries in the designated space and watch the magic happen as the application executes them for you.
@@ -53,8 +55,8 @@ The average page load time of the web application is measured using the google [
 ## Getting Started
 
 1. Clone the repository.
-2. Install dependencies with `npm install`.
-3. Run the application with `npm run dev`.
+2. Install dependencies with `pnpm install`.
+3. Run the application with `pnpm run dev`.
 4. Open your browser and go to [http://localhost:3000](http://localhost:3000).
 
 ## Usage
