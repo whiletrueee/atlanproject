@@ -9,6 +9,7 @@
   > If the above link is broken use [https://atlanproject.vercel.app/](https://atlanproject.vercel.app/).
 
 - Video Demo Link [Loom Video Link](https://www.loom.com/share/fbdff3edab5c4c9697fca4737760cf5dsid=a2774873-158a-4cf6-a4f1-7aeffa6c675d)
+https://www.loom.com/share/fbdff3edab5c4c9697fca4737760cf5dsid=a2774873-158a-4cf6-a4f1-7aeffa6c675d
 
 ## Features
 
