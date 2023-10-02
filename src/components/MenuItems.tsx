@@ -5,11 +5,13 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { sidePanel } from "@/utils/constants";
 import { useState } from "react";
 import { useStore } from "@/zustand/store";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import DummySidePanel from "@/components/dummySidePanel";
 
 const options = [sidePanel.recentQuery, sidePanel.favoriteQuery];
 export default function MenuItems() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const { sidePanel, updateSidePanel } = useStore((state) => state);
+  const { sidePanel, updateSidePanel, preview } = useStore((state) => state);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -18,6 +20,7 @@ export default function MenuItems() {
     updateSidePanel(option);
     setAnchorEl(null);
   };
+
   return (
     <div className="">
       <div className="menuOptions">

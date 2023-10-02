@@ -12,7 +12,7 @@ export function getColumnArray(data: any) {
     const mock = {
       field: key,
       headerName: convertCamelToSpaceCapital(key),
-      width: 90,
+      flex: 1,
     };
     columnArray.push(mock);
   }

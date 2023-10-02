@@ -1,6 +1,7 @@
 import { sidePanel } from "@/utils/constants";
 
 export interface State {
+  preview: boolean;
   tableData: {
     row: any[] | undefined;
     columns: any[] | undefined;

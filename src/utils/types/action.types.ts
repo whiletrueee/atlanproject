@@ -1,7 +1,8 @@
 import { sidePanel } from "@/utils/constants";
-import { State, authSliceState } from "@/utils/state.types";
+import { State, authSliceState } from "@/utils/types/state.types";
 
 export interface Action {
+  updatePreview: (preview: boolean) => void;
   updateQueryData: (queryData: State["queryData"]) => void;
   updateQueryHistory: (
     queryValue: string | undefined,

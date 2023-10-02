@@ -1,8 +1,15 @@
 import MenuItems from "@/components/MenuItems";
+import DummySidePanel from "@/components/dummySidePanel";
 import QueriesList from "@/components/recentQueries";
+import { useStore } from "@/zustand/store";
 import { Button } from "@mui/material";
 
 export default function SidePanel() {
+  const { preview } = useStore();
+
+  if (preview) {
+    return <DummySidePanel />;
+  }
   return (
     <div className="sidePanel">
       <MenuItems />

@@ -1,6 +1,6 @@
-import { Action } from "@/utils/action.types";
+import { Action } from "@/utils/types/action.types";
 import { sidePanel } from "@/utils/constants";
-import { State } from "@/utils/state.types";
+import { State } from "@/utils/types/state.types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { dataTitle } from "@/utils/constants";
@@ -12,6 +12,7 @@ import { getColumnArray } from "@/utils/helperFunction";
 export const useStore = create<State & Action>()(
   persist(
     (set) => ({
+      preview: false,
       tableData: {
         row: undefined,
         columns: undefined,
@@ -21,6 +22,8 @@ export const useStore = create<State & Action>()(
       },
       queryData: { queryValue: undefined, index: undefined },
       queryHistory: [],
+      updatePreview: (preview: boolean) =>
+        set((state: State & Action) => ({ ...state, preview })),
       updateSidePanel: (activeMenu: sidePanel) =>
         set((state: State & Action) => ({
           ...state,
@@ -39,14 +42,10 @@ export const useStore = create<State & Action>()(
           ],
         })),
       updateQueryData: (queryData: State["queryData"]) =>
-        set((state: State & Action) => ({ ...state, queryData: queryData })),
+        set((state: State & Action) => ({ ...state, queryData })),
       updateQueryHistory: (queryValue: string | undefined, tableName: string) =>
         set((state: State & Action) => {
           if (queryValue) {
-            console.log(
-              "tablename",
-              dataTitle[Math.floor(Math.random() * dataTitle.length)]
-            );
             return {
               ...state,
               queryHistory: [
