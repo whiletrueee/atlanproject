@@ -1,10 +1,7 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import * as React from "react";
-import AuthSidePanel from "@/components/auth/Auth.SidePanel";
 import AuthLogin from "@/components/auth/Auth.Login";
-
-const inter = Inter({ subsets: ["latin"] });
+import DummySidePanel from "@/components/dummySidePanel";
 
 export default function Home() {
   return (
@@ -16,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex dashboard">
-        <AuthSidePanel />
+        <DummySidePanel />
         <AuthLogin />
       </div>
     </>

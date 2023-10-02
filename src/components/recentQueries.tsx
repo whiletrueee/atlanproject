@@ -43,7 +43,7 @@ export default function QueriesList(): JSX.Element {
                 }}
               >
                 <div className="recentQueryItemMenu">
-                  <span>{formatTime(query.timestamp)}</span>
+                  <span>{formatTime(query.timestamp)} ago</span>
                   <Tooltip
                     placement="top"
                     title={
