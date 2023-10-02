@@ -6,9 +6,9 @@
 
 - Vercel Deployment Link [https://atlan.singhharshit.me](https://atlan.singhharshit.me).
 
-  > If the above link is broken use [hello](https://atlanproject.vercel.app/).
+  > If the above link is broken use [https://atlanproject.vercel.app/](https://atlanproject.vercel.app/).
 
-- Video Demo Link [https://www.loom.com/share/fbdff3edab5c4c9697fca4737760cf5dsid=a2774873-158a-4cf6-a4f1-7aeffa6c675d](Loom Video Link)
+- Video Demo Link [Loom Video Link](https://www.loom.com/share/fbdff3edab5c4c9697fca4737760cf5dsid=a2774873-158a-4cf6-a4f1-7aeffa6c675d)
 
 ## Features
 
@@ -46,11 +46,11 @@
 
 ## Page Load Time
 
-The average page load time of the web application is measured using the google [https://pagespeed.web.dev/analysis/https-atlan-singhharshit-me-dashboard/kas9ee5deu?form_factor=desktop](page speed insight) website. This metric was obtained by capturing the time from the initiation of the page load to the complete rendering of the DOM.
+The average page load time of the web application is measured using the google [Page Speed insight](https://pagespeed.web.dev/analysis/https-atlan-singhharshit-me-dashboard/kas9ee5deu?form_factor=desktop) website. This metric was obtained by capturing the time from the initiation of the page load to the complete rendering of the DOM.
 
-- [https://pagespeed.web.dev/analysis/https-atlan-singhharshit-me-dashboard/kas9ee5deu?form_factor=desktop](Speed Report for dashboard)
+- [Speed report for dashboard](https://pagespeed.web.dev/analysis/https-atlan-singhharshit-me-dashboard/kas9ee5deu?form_factor=desktop)
 
-- [https://pagespeed.web.dev/analysis/https-atlan-singhharshit-me-dashboard/94i36knn4g?form_factor=desktop](Speed Report for preview link of query)
+- [Speed Report for preview link of query](https://pagespeed.web.dev/analysis/https-atlan-singhharshit-me-dashboard/94i36knn4g?form_factor=desktop)
 
 ## Getting Started
 
