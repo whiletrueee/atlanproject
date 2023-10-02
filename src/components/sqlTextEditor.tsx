@@ -5,7 +5,7 @@ import "ace-builds/src-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-terminal";
 import "ace-builds/src-noconflict/ext-language_tools";
 import { useStore } from "@/zustand/store";
-import { dataTitle } from "@/utils/constants";
+import { dataTitle, sidePanel } from "@/utils/constants";
 import SendIcon from "@mui/icons-material/Send";
 import toast from "react-hot-toast";
 
@@ -16,6 +16,7 @@ export default function SQLTextEditor(): JSX.Element {
     updateQueryHistory,
     queryHistory,
     updateTableData,
+    updateSidePanel,
     preview,
   } = useStore((state) => state);
 
@@ -85,11 +86,8 @@ export default function SQLTextEditor(): JSX.Element {
         <div className="textEditorMenu">
           <Button
             onClick={() => {
-              if (
-                !queryData.queryValue ||
-                !queryHistory[queryData.index!].tableName
-              ) {
-                toast("Select a query to share!", {
+              if (queryHistory.length === 0 || !queryData.queryValue) {
+                toast("Select a query from sidepanel to share!", {
                   icon: "⬅️",
                   style: {
                     borderRadius: "10px",
@@ -132,6 +130,7 @@ export default function SQLTextEditor(): JSX.Element {
                 dataTitle[Math.floor(Math.random() * dataTitle.length)];
               updateQueryHistory(queryData.queryValue, tableName);
               updateTableData(tableName);
+              updateSidePanel(sidePanel.recentQuery);
             }}
             variant="contained"
             size="medium"

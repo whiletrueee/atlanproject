@@ -12,7 +12,22 @@ export function getColumnArray(data: any) {
     const mock = {
       field: key,
       headerName: convertCamelToSpaceCapital(key),
-      flex: 1,
+      flex:
+        key === "address" || key === "territoryIDs" || key === "shipAddress"
+          ? 2
+          : 1,
+      valueGetter: (params: any) => {
+        const result: string[] = [];
+        if (
+          key === "address" ||
+          key === "territoryIDs" ||
+          key === "shipAddress"
+        ) {
+          checkKeysUnderObject(params.row[key], result);
+          return result.join(", ");
+        }
+        return params.row[key];
+      },
     };
     columnArray.push(mock);
   }
@@ -25,3 +40,15 @@ export function getRowId(data: any): string {
   if (data?.orderID) return "orderID";
   return "id";
 }
+
+export const checkKeysUnderObject = (
+  obj: { [x: string]: string },
+  result: string[]
+) => {
+  for (let key in obj) {
+    if (key) {
+      // push the value to the result array only if key exists
+      result.push(key + ": " + obj[key]);
+    }
+  }
+};

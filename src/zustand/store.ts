@@ -56,7 +56,8 @@ export const useStore = create<State & Action>()(
                   isFavourite: false,
                   tableName,
                 },
-              ],
+              ].reverse(),
+              queryData: { queryValue, index: state.queryHistory.length },
             };
           }
           return state;
