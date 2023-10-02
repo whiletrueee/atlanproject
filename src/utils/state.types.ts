@@ -1,6 +1,10 @@
 import { sidePanel } from "@/utils/constants";
 
 export interface State {
+  tableData: {
+    row: any[] | undefined;
+    columns: any[] | undefined;
+  };
   sidePanel: {
     activeMenu: sidePanel;
   };
@@ -9,8 +13,7 @@ export interface State {
     timestamp: string;
     queryValue: string;
     isFavourite: boolean;
-    row: any[];
-    column: any[];
+    tableName: string;
   }[];
 }
 

@@ -3,21 +3,32 @@ import { sidePanel } from "@/utils/constants";
 import { State } from "@/utils/state.types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { dataTitle } from "@/utils/constants";
 import order from "@/utils/Json/order.json";
+import customer from "@/utils/Json/customer.json";
+import employee from "@/utils/Json/employee.json";
 import { getColumnArray } from "@/utils/helperFunction";
 
 export const useStore = create<State & Action>()(
   persist(
     (set) => ({
+      tableData: {
+        row: undefined,
+        columns: undefined,
+      },
       sidePanel: {
         activeMenu: sidePanel.recentQuery,
       },
       queryData: { queryValue: undefined, index: undefined },
       queryHistory: [],
       updateSidePanel: (activeMenu: sidePanel) =>
-        set(() => ({ sidePanel: { activeMenu } })),
-      updateFavorite: (queryIndex) =>
-        set((state) => ({
+        set((state: State & Action) => ({
+          ...state,
+          sidePanel: { activeMenu },
+        })),
+      updateFavorite: (queryIndex: number) =>
+        set((state: State & Action) => ({
+          ...state,
           queryHistory: [
             ...state.queryHistory.slice(0, queryIndex),
             {
@@ -27,10 +38,15 @@ export const useStore = create<State & Action>()(
             ...state.queryHistory.slice(queryIndex + 1),
           ],
         })),
-      updateQueryData: (queryData) => set(() => ({ queryData: queryData })),
-      updateQueryHistory: (queryValue) =>
-        set((state) => {
+      updateQueryData: (queryData: State["queryData"]) =>
+        set((state: State & Action) => ({ ...state, queryData: queryData })),
+      updateQueryHistory: (queryValue: string | undefined, tableName: string) =>
+        set((state: State & Action) => {
           if (queryValue) {
+            console.log(
+              "tablename",
+              dataTitle[Math.floor(Math.random() * dataTitle.length)]
+            );
             return {
               ...state,
               queryHistory: [
@@ -39,14 +55,21 @@ export const useStore = create<State & Action>()(
                   timestamp: new Date().toISOString(),
                   queryValue,
                   isFavourite: false,
-                  row: order,
-                  column: getColumnArray(order[0]),
+                  tableName,
                 },
               ],
             };
           }
           return state;
         }),
+      updateTableData: (tableName: string) => {
+        const data = require(`@/utils/Json/${tableName}.json`);
+        const columns = getColumnArray(data[0]);
+        set((state: State & Action) => ({
+          ...state,
+          tableData: { row: data, columns },
+        }));
+      },
     }),
     {
       name: "query-store",

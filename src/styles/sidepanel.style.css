@@ -128,3 +128,13 @@
   align-items: flex-start;
   gap: 50px;
 }
+
+.logoutPanel{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 30px;
+}
